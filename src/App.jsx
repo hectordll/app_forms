@@ -1,5 +1,7 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/js/bootstrap.min.js';
 import Template from "./Template";
-// import Home from "./pages/home";
+import Home from "./pages/Home";
 import Form from "./pages/Form";
 import Authentification from "./pages/Authentification";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
@@ -13,7 +15,7 @@ const router = createBrowserRouter(
       children: [
         {
           index: true,
-          element: <Form />,
+          element: <Home />,
         },
         {
           path: 'form',
