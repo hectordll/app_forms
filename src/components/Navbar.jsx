@@ -1,5 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import LogoutBtn from "./LogoutBtn";
+import LoginBtn from "./LoginBtn";
 
 function Navbar() {
     const { isAuthenticated } = useAuth0();
@@ -21,6 +22,8 @@ function Navbar() {
         >
             <span className="navbar-toggler-icon"></span>
         </button>
+                    {/* Afficher le bouton Login si l'utilisateur n'est pas connecté */}
+                    {!isAuthenticated && <LoginBtn />}
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             {isAuthenticated && ( // Render the "Home" link if authenticated

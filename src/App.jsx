@@ -10,18 +10,16 @@ const App = () => {
   const { isAuthenticated } = useAuth0();
 
   return (
-    <Router>
-      <div>
-        <Navbar />
-        {isAuthenticated ? (
+    <>
+      <Router>
+        <div>
+          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
-        ) : (
-          <LoginBtn />
-        )}
-      </div>
-    </Router>
+        </div>
+      </Router>
+    </>
   );
 };
 
