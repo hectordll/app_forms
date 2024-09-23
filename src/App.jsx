@@ -3,8 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import Template from "./Template";
 import Home from "./pages/home/Home";
-import Form from "./pages/Form";
-import Authentification from "./pages/Authentification";
+import Form from "./pages/userForm/UserForm";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter(
@@ -21,10 +20,6 @@ const router = createBrowserRouter(
         {
           path: 'form',
           element: <Form />,
-        },
-        {
-          path: 'authentification',
-          element: <Authentification />,
         },
       ]
     }

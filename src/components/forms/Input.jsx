@@ -1,7 +1,7 @@
-export function Input ({type}){
+export default function Input ({type}){
     return (
         <>
-        <input type={type} className='form-input' ></input>
+        <input type={type} className='form-input'></input>
         </>
     )
 }
