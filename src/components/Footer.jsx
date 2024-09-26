@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 
 export default function Footer() {
     return (
-        <footer className="py-3 my-4 footer footer-expand-lg footer-light bg-light">
+        <footer className="py-3 footer footer-expand-lg footer-light bg-light">
             <ul className="nav justify-content-center border-bottom pb-3 mb-3">
                 <li className="nav-item">
                     <NavLink 
