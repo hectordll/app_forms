@@ -6,7 +6,6 @@ import Checkbox from './../../components/forms/Checkbox';
 export default function UserForm() {
 const [showCheck, setShowCheck] = useState(false);
 const [message, setMessage] = useState('');
-const [nom, setNom] = useState('');
 
 const handleSubmit = (event) => {
   event.preventDefault(); // Empêche le rechargement de la page
@@ -15,7 +14,6 @@ const handleSubmit = (event) => {
 };
 
 return (
-  
   <div class="user-form d-flex flex-column justify-content-center align-items-center">
     <div className="container my-3">
       <h2 className='title'>Tenter de gagner 2 places pour le parc Asterix</h2>
