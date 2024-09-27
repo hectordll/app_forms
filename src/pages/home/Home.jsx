@@ -1,4 +1,4 @@
-import './home.css'
+import './Home.css'
 
 // import './../../constants/_base.scss'
 // import './../../constants/_components.scss'

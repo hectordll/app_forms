@@ -1,9 +1,11 @@
 import { useState } from 'react'
+
 import './UserForm.css'
 import { Input } from '../../components/forms/Input'
 import { Checkbox } from '../../components/forms/Checkbox'
 
-function UserForm() {
+
+export default function UserForm() {
 const [showCheck, setShowCheck] = useState(false);
 const [message, setMessage] = useState('');
 
@@ -14,24 +16,11 @@ const handleSubmit = (event) => {
 
 return (
   
-  <div className="container my-3">
-    <h1 className='title'>Tenter de gagner 2 places pour le parc Asterix</h1>
-    <Form 
-      onSubmit={handleSubmit}
-      onShowCheck={setShowCheck}  // Update showCheck based on the checkbox state
-      showCheck={showCheck}
-    />
-    {message && <p style={{ color: 'green' }}>{message}</p>}
-  </div>
-  
-);
-}
-
-function Form ({showCheck, onShowCheck}){
-  return (
+  <div class="user-form d-flex flex-column justify-content-center align-items-center">
     <div className="container my-3">
-      <div className='form'>
-        <form>
+      <h2 className='title'>Tenter de gagner 2 places pour le parc Asterix</h2>
+      <div className="container my-3">
+        <div className='form'>
           <div className='champs'>
             <div className='FirstName'>
               <label>
@@ -62,23 +51,22 @@ function Form ({showCheck, onShowCheck}){
           <div className='check-rules'>
             <Checkbox 
               checked={showCheck} 
-              onChange={onShowCheck} 
+              onChange={setShowCheck} 
               label="Accepter les conditions d'utilisation"
             /> 
           </div>
           <div className='button'>
-            <button type='submit' disabled={!showCheck}>
+            <button disabled={!showCheck}>
               Envoyer
             </button>
-            
           </div>
-        </form>
-        
+            
+        </div>
+      
       </div>
-    
     </div>
-  )
+  </div>
+  
+);
 }
 
-
-export default UserForm
