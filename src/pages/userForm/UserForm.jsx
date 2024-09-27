@@ -30,8 +30,6 @@ return (
               <label>
                 Nom :
                 <Input type='text' 
-                value = {nom}
-                onChange = {(e)=> setNom(e.target.value)}
                 />
               </label>
             </div>
