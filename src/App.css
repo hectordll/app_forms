@@ -12,3 +12,6 @@ h3{
 .clr-white{
   color: white;
 }
+nav{
+  min-height: 12vh;
+}
