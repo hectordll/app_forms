@@ -7,6 +7,9 @@ import './Home.css'
 // import './../../constants/main.scss'
 // import './../../constants/menu-page.scss'
 // import './../../constants/mixins.scss'
+import ImgMobile from './../../../public/img/pslp-mobile.png';
+import ImgDesktop from './../../../public/img/kv-pslp-ordi-1-1.png';
+
 
 
 
@@ -14,10 +17,16 @@ export default function Home() {
     return (
         <>
         <main>
-            <div className="hero d-flex flex-column justify-content-center" style={{ backgroundImage: `url("/img/kv-pslp-ordi-1-1.png")`, height: `94.1vh`, objectFit: `cover`}}>
-                <h1 className='clr-white'>PEUR SUR LE PARC</h1>
-                <h3 className='clr-white'>Du 5 octobre au 11 novembre 2024</h3>
-            </div>
+            <section className="block__home">
+                <picture>
+                    <source srcSet={ImgMobile} media="(max-width: 768px)"/>
+                    <img src={ImgDesktop} alt="peur sur le parc" className="img-desktop"/>
+                </picture>
+                <div className="block__home__title">
+                        <h1>PEUR SUR LE PARC</h1>
+                        <h3>Du 5 octobre au 11 novembre 2024</h3>
+                </div>
+            </section>
         </main>
         </>
     )
