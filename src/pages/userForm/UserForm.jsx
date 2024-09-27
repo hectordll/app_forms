@@ -5,15 +5,21 @@ import Checkbox from './../../components/forms/Checkbox';
 
 export default function UserForm() {
 const [showCheck, setShowCheck] = useState(false);
+const [message, setMessage] = useState('');
+
+const handleSubmit = (event) => {
+  event.preventDefault(); // Empêche le rechargement de la page
+  setMessage("Votre participation a bien été enregistrée");
+
+};
 
 return (
-  
   <div class="user-form d-flex flex-column justify-content-center align-items-center">
     <div className="container my-3">
       <h2 className='title'>Tenter de gagner 2 places pour le parc Asterix</h2>
       <div className="container my-3">
         <div className='form'>
-          <div className='champs'>
+          <form onSubmit={handleSubmit}>
             <div className='FirstName'>
               <label>
                 Prénom :
@@ -23,7 +29,10 @@ return (
             <div className='LastName'>
               <label>
                 Nom :
-                <Input type='text'/>
+                <Input type='text' 
+                value = {nom}
+                onChange = {(e)=> setNom(e.target.value)}
+                />
               </label>
             </div>
             <div className='mail'>
@@ -38,21 +47,22 @@ return (
                 <Input type='tel'/>
               </label>
             </div>
-          </div>
+         
           
-          <div className='check-rules'>
-            <Checkbox 
-              checked={showCheck} 
-              onChange={setShowCheck} 
-              label="Accepter les conditions d'utilisation"
-            /> 
-          </div>
-          <div className='button'>
-            <button disabled={!showCheck}>
-              Envoyer
-            </button>
-          </div>
-            
+            <div className='check-rules'>
+              <Checkbox 
+                checked={showCheck} 
+                onChange = {setShowCheck} 
+                label="Accepter les conditions d'utilisation"
+              /> 
+            </div>
+            <div className='button'>
+              <button type='submit' disabled={!showCheck}>
+                Envoyer
+              </button>
+            </div>
+          </form>  
+          {message && <p style={{ color: 'green' }}>{message}</p>}  
         </div>
       
       </div>
