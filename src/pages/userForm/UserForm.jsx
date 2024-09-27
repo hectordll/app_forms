@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './UserForm.css'
-import { Input } from './components/forms/Input'
-import { Checkbox } from './components/forms/Checkbox'
+import { Input } from '../../components/forms/Input'
+import { Checkbox } from '../../components/forms/Checkbox'
 //import { Button } from './components/forms/Button'
 
 function UserForm() {
